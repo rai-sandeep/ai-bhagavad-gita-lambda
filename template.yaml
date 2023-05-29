@@ -23,3 +23,14 @@ Resources:
           OPENAI_API_KEY: !Ref OpenAIAPIKey
       RuntimeManagementConfig:
         UpdateRuntimeOn: Auto
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors: 
+            AllowCredentials: false
+            AllowHeaders: 
+              - content-type
+            AllowMethods: 
+              - POST
+            AllowOrigins: 
+              - *
+        InvokeMode: BUFFERED
