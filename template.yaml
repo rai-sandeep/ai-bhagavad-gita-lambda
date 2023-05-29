@@ -1,11 +1,11 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Parameters:
-  REPO_NAME:
-    Description: "REPO_NAME"
+  RepoName:
+    Description: "RepoName"
     Type: "String"
-  OPENAI_API_KEY:
-    Description: "OPENAI_API_KEY"
+  OpenAIAPIKey:
+    Description: "OpenAIAPIKey"
     Type: "String"
 Description: An AWS Serverless Specification template describing your function.
 Resources:
@@ -15,7 +15,7 @@ Resources:
       Handler: lambda_function.lambda_handler
       Runtime: python3.10
       CodeUri: .
-      FunctionName: !Ref REPO_NAME
+      FunctionName: !Ref RepoName
       Description: ''
       MemorySize: 128
       Timeout: 30
@@ -34,4 +34,4 @@ Resources:
         InvokeMode: BUFFERED
       Environment:
         Variables:
-          OPENAI_API_KEY: !Ref OPENAI_API_KEY
+          OPENAI_API_KEY: !Ref OpenAIAPIKey

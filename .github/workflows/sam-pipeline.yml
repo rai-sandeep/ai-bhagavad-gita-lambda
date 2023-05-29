@@ -20,4 +20,4 @@ jobs:
   # Run Unit tests- Specify unit tests here 
   
   # sam deploy
-        - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --resolve-s3 --capabilities CAPABILITY_IAM --stack-name ${{ github.event.repository.name }} --parameter-overrides ParameterKey=OPENAI_API_KEY,ParameterValue=${{ secrets.OPENAI_API_KEY }} ParameterKey=REPO_NAME,ParameterValue=${{ github.event.repository.name }}
+        - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --resolve-s3 --capabilities CAPABILITY_IAM --stack-name ${{ github.event.repository.name }} --parameter-overrides ParameterKey=RepoName,ParameterValue=${{ github.event.repository.name }} ParameterKey=OpenAIAPIKey,ParameterValue=${{ secrets.OPENAI_API_KEY }}
