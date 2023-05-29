@@ -13,3 +13,6 @@ Needs the following repository secrets (Settings > Secrets and variables > Actio
 - AWS_ACCESS_KEY_ID: AWS Security Credentials access key ID
 - AWS_SECRET_ACCESS_KEY: AWS Security Credentials secret access key
 - OPENAI_API_KEY: API Key for Open AI API call from the Lambda function
+
+## Stage changes, Commit and Push to remote
+Using script: `sh cicd.sh`
