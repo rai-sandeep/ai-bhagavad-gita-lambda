@@ -16,8 +16,6 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 30
-      Role: >-
-        arn:aws:iam::362084602574:role/service-role/BhagavadGita-GPT-role-9ttzunzi
       Environment:
         Variables:
           OPENAI_API_KEY: !Ref OpenAIAPIKey
