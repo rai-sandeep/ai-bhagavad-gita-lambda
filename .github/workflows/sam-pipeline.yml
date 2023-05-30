@@ -13,11 +13,11 @@ jobs:
           with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws-region: ap-south-1
+            aws-region:  ${{ vars.AWS_REGION }}
         # sam build 
         - run: sam build --use-container
   
   # Run Unit tests- Specify unit tests here 
   
   # sam deploy
-        - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --resolve-s3 --capabilities CAPABILITY_IAM --stack-name ${{ github.event.repository.name }} --parameter-overrides ParameterKey=RepoName,ParameterValue=${{ github.event.repository.name }} ParameterKey=OpenAIAPIKey,ParameterValue=${{ secrets.OPENAI_API_KEY }}
+        - run: sam deploy --parameter-overrides ParameterKey=OpenAIAPIKey,ParameterValue=${{ secrets.OPENAI_API_KEY }} ParameterKey=RepoName,ParameterValue=${{ github.event.repository.name }} --stack-name ${{ github.event.repository.name }} --capabilities CAPABILITY_IAM --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset
